@@ -5,6 +5,10 @@
     padding: 0;
     
 }
+
+html {
+    scrollbar-gutter: stable;
+}
 /*Använder mig av ID:et jag satte på mitt errormeddelande för at komma åt specifikt den paragrafen 
 och placerar den där jag vill ha den*/
 #jsonError{

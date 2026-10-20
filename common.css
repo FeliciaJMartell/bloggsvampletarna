@@ -2,6 +2,23 @@ html {
     scrollbar-gutter: stable;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    background-color: #d9d2b8;
+}
+
+main {
+    flex: 1;
+}
+
 body > header nav {
     padding-top: 1rem;
     margin: 0 0 1rem 0;
@@ -40,6 +57,15 @@ nav a {
 nav a[aria-current="page"] {
     background-color: #f0af30;
     color: black;
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    color: #5a6618;
+    border-top: 1px solid black;
+    margin-top: 1rem;
 }
 
 @media (min-width: 768px) {

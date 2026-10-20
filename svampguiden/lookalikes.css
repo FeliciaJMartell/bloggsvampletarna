@@ -1,30 +1,3 @@
-/* sätter standarden för hela sidan. Sätter margin & padding till 0 & med border box säger jag att padding & border ska räknas i storleken jag bestämmer. 
-Alltså inte läggas extra. */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/*Använder display flex så att alla barn blir flexelement. Detta gör att jag kan använda flex 1 på main, för main är barn till body.
-Använder sedan flex direction så att header, footer och main hamnar under varandra.
-Använder också min-height 100dvh eftersom jag behövde skrolla på mobilen. Dvh tänker på adressfältet och använder bara ytan som syns. */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100dvh;
-    background-color: #d9d2b8;
-}
-
-/* Säger till main att ta allt utrymme som blir över & trycker då ner footern längst ner. Gör display flex här så att mains barn blir flex-element.
-Eftersom jag använder order: - 1 på ett av mains barn. 
-Använder flex-direction även här eftersom flex i sig lägger på rad som standard. */
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
 button {
     font-weight: bold;
     border: 1px solid black;
@@ -36,6 +9,9 @@ button {
     font-family: inherit;
 }
 
+main {
+    flex: 1;
+}
 
 h2,
 h3 {
@@ -53,15 +29,6 @@ h2 {
 h3 {
     font-size: 1rem;
     color: #332e18;
-}
-
-footer {
-    text-align: center;
-    padding-bottom: 0.5rem;
-    padding-top: 1rem;
-    color: #5a6618;
-    border-top: 1px solid black;
-    margin-top: 1rem;
 }
 
 /* Ville att texten och knapparna skulle ligga fint, tyckte inte det såg bra ut med center, så valde baseline så att den går efter undersidan av texten.
