@@ -1,0 +1,108 @@
+/* Använder box sizing högst upp i min css fil för att få bredden och höjden som jag faktiskt skriver. Utan detta så läggs tex padding på extra på det jag skriver. */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(240, 206, 163);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-style: italic;
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    font-style: italic;
+    text-align: center;
+    color: black;
+}
+
+/* här kommer min css selektor vy container som gäller för både startsida och inloggad vy. Jag använder flexbox column så att det ligger staplat på varandra, 
+då jag ville ha det så på både dator och större skärmar så behövde jag inte ändra något kring det i min media.*/
+
+.vy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5rem;
+    gap: 5px;
+}
+
+
+/*här kommer min css selektor för min placeholder, jag ville ju inte att namn och lösenord skulle stå ovanför, så då behövde jag gömma det. 
+Jag använder absolute så att namn och lösenord inte knuffas med något annat, man kan säga att det läggs i luften. Det tas ut ur det normala dokumentflödet och ligger fritt. 
+Jag minskar min label (inte namn och lösenord) till en pixel, nu är det typ osynligt för ögat, men fortfarande där.
+Jag använder overflow för att klippa allt överflödigt, min låda är 1px, men namn och lösenord är större, så overflow klipper allting som hamnar utanför lådan. 
+Sedan clip, jag hade kunnat använda clip-path, men då jag kände att det blev mer tydligt för mig själv att använda clip rect så valde jag den. 
+Clip klipper de sista bitarna från lådan, den klipper ner allt på 0.*/
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+/*Jag ändrar cursor så att den blir en liten hand när man hovrar över knapparna, lägger även till textfärg eftersom jag märkte att texten blev väldigt ljus
+på min mobil då jag kör darkmode.*/
+
+button {
+    margin-top: 15px;
+    border: 2px solid black;
+    padding: 7px 20px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    cursor: pointer;
+    color: black; 
+}
+
+
+/* jag kör en display block så att bilden slutar vara inline, jag ville kunna centrera bilden och körde därför margin 0 auto. Jag gör bilden till en kvadrat genom
+width och height så att jag senare snyggt ska kunna göra den rund och fyller sedan hela cirkeln med object fit.*/
+.svamp {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    border: 4px solid black;
+}
+
+/* gör att textrutorna som man ska skriva fyller hela skärmen på mobil så det blir enklare att klicka på dom med fingrarna. 
+Det ändrar jag sedan i min media så att det inte tar upp hela rutan på en större skärm.*/
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1.5px solid black;
+}
+
+
+/* jag lägger till klassen hidden för att kunna gömma saker i mitt javascript sedan. */
+.hidden {
+    display: none;
+}
+
+
+/* större bild och rutorna får en fast bredd på bredare skärm.*/
+
+@media (min-width: 768px) {
+    .svamp {
+        width: 350px;
+        height: 350px;
+    }
+
+    input {
+        width: 400px;
+        padding: 5px;
+    }
+
+
+}

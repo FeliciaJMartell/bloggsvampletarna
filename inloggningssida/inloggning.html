@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svampletarna</title>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Svampletarna</h1>
+    </header>
+    <main>
+        <h2 id="loginRubrik">Logga in här</h2>
+
+
+        <!--Jag väljer att bygga min startsida med form just för att det är till för att skicka in information och fungerar när man tex trycker på enter,
+    använder även form just för att semantiken skall bli rätt. 
+    Hade kunnat bygga med div, men då hade inte semantiken blivit rätt & jag hade inte fått det gratis att trycka på enter. 
+    Jag väljer också att göra en class för att kunna styla inloggad vy och utloggad vy på samma vis och således bara använda en css selektor. -->
+
+        <form id="loginForm" class="vy-container">
+
+            <!-- Jag använder class visually hidden för att ha möjlighet att gömma mina element när man är inloggad.
+        Jag använder placeholder, då jag ville att det skulle stå namn och lösenord i rutan istället för ovanför. -->
+
+            <label for="namn" class="visually-hidden">Namn</label>
+            <input type="text" id="namn" placeholder="Namn">
+
+            <label for="losenord" class="visually-hidden">Lösenord</label>
+            <input type="password" id="losenord" placeholder="Lösenord">
+
+            <!--Jag väljer att använda aria-live för att en skärmuppläsare ska kunna meddela att det är fel lösenord, utan detta så står det bara att det är fel lösenord 
+och en blind hade inte kunnat se det.-->
+
+            <button type="submit" id="loginKnapp">Logga in</button>
+            <p id="felMeddelande" aria-live="polite"></p>
+        </form>
+        <!-- Jag väljer att lägga bilden utanför min form för att det ska vara ett eget element och inte ha samma styling som vy container, jag också bilden till en class
+ ifall jag någon gång i framtiden behöver lägga till fler bilder.-->
+
+        <img src="bilder/kantarell.jpeg" alt="två kantareller i skogen" class="svamp">
+
+        <!--Jag väljer att använda section för den inloggade vyn då allt skulle vara i samma html fil och även för att hålla saker och ting semantiskt korrekt.
+Eftersom jag rent teoretiskt sett inte byter sida så skriver jag in aria-live här så att användaren vet att den kommit till den inloggade vyn.-->
+        <section id="inloggadVy" class="hidden vy-container" aria-live="polite">
+            <h2 id="valkomstText"></h2>
+            <button id="logoutKnapp">Logga ut</button>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svampguiden</title>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="lookalikes.css">
+    <script src="lookalikes.js" defer></script> <!--lägger till defer så att hela html filen laddas innan JS kör.-->
+</head>
+
+<body>
+    <header>
+        <h1>Svampletarna</h1>
+        <!--Skapade upp en gemensam navigiation på hemsidan. Valden även att göra aria-current page så att skärmuppläsaren vet var man är.-->
+        <nav>
+            <ul>
+                <li><a href="../index.html">Alla Svampar</a></li>
+                <li><a href="../mina-svampar/mina-svampar.html">Mina Svampar</a></li>
+                <li><a href="lookalikes.html" aria-current="page">Svampguiden</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Svampguiden</h2>
+        <!--Gjorde en role alert för skärmuppläsaren, så att den kan säga vad som sker. -->
+        <p role="alert" id="somethingHappened"></p>
+        <div class="cards">
+            <article class="card">
+                <!--Lägger en text i min h3 för att skippa varning från validatorn, så den kommer om json tar lång tid att ladda, men försvinner om något går fel med json.-->
+                <h3 id="leftTitle">Laddar...</h3>
+                <p class="risk" id="leftRisk"></p>
+                <ul class="features" id="leftIdentify"></ul>
+            </article>
+            <article class="card">
+                <h3 id="rightTitle">Laddar...</h3>
+                <p class="risk" id="rightRisk"></p>
+                <ul class="features" id="rightIdentify"></ul>
+            </article>
+        </div>
+        <div class="page-nav">
+            <button type="button" id="prevButton">Tillbaka</button>
+            <!--Gjorde en aria-live så att skärmuppläsaren kan säga vilken sida man står på.-->
+            <span aria-live="polite" id="pageNumber"></span>
+            <button type="button" id="nextButton">Nästa</button>
+        </div>
+    </main>
+    <footer>
+        <p>Grupp 4 WU26 - Linn, Felicia, Zouhir</p>
+    </footer>
+</body>
+
+</html>

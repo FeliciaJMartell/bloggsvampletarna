@@ -1,0 +1,252 @@
+/* Sätter standarden för hela sidan. Border-box gör så att padding och border ska räknas med i de storlekar jag sätter sen.*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+/*Använder mig av ID:et jag satte på mitt errormeddelande för at komma åt specifikt den paragrafen 
+och placerar den där jag vill ha den*/
+#jsonError{
+    text-align: center;
+    font-size: large;
+    text-decoration: underline;
+}
+
+body{
+    background-color: #d9d2b8;
+}
+/*Placerar Rubrik där jag vill ha den och sätter en skugga på för att ge kontrast mot bakgrunden. */
+h1, h2 {
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    color: #5a6618;
+    text-shadow: 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+/* Ger lite mellanrum mellan nav och h2*/
+nav {
+    margin-bottom: 2rem;
+}
+
+/*Ville inte ha några prickar framför länkarna*/
+nav ul {
+    list-style-type: none;
+}
+
+/*Display block gör att den inte längre är inline och då fungerar det att använda sig av margin och padding. 
+Fixar lite med hur jag vill att den ska se ut på sidan, med placering och sådant.*/
+a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #332e18;
+    border-radius: 5px;
+    margin: 0.4rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #d9d2b8;
+    background-color: #5a6618;
+}
+
+/*Gör article till display: flex för att se till att allt ligger där det ska, fixar lite mer storlek och border för utseendet jag vill ha.*/
+article {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #332e18;
+    border-radius: 0.3rem;
+    text-align: center;
+    margin: 1rem;
+    background-color: rgb(187, 197, 132);
+}
+
+/*Sedan pillar jag med lite olika element och dess placering och storlek och dylikt. */
+h3 {
+    
+    font-size: 1.5rem;
+    color: #332e18;
+}
+
+article h3:last-of-type {
+    font-size: 1.2rem;
+    /*margin-bottom: 1rem;*/
+}
+
+/*Anpassar hur stora bilderna är och placerar dom som jag vill inne i article:n*/
+img {
+    max-width: 80%;
+    height: auto;
+    min-width: 0;
+    margin: 0.5rem auto;
+}
+
+p {
+    margin: 0 1rem;
+    min-width: 0;
+    color: #332e18;
+}
+
+article p:last-of-type {
+   margin-top: 1rem;
+}
+
+/*Bestämmer det som ska gälla alla olika badges och sedan lägger olika färger på dom efteråt*/
+.edible,
+.deadly,
+.poisonous {
+    margin-top: 1rem;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.edible {
+    color: #5a6618;
+}
+
+.deadly {
+    color: #d32f2f;
+    border: 1px solid #d32f2f;
+}
+
+.poisonous {
+    color: #d32f2f;
+}
+
+/*Gör button till block för att kunna ändra placering med padding och margin. */
+button {
+    display: block;
+    margin: 1rem 0.8rem 0.8rem auto;
+    padding: 0.5rem 1rem;
+    color: #d9d2b8;
+    background-color: #5a6618;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+/*Lägger footer där den ska och fixar färger*/
+footer {
+    text-align: center;
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    border: 1px solid #332e18;
+    margin-top: 1rem;
+}
+
+footer p{
+    color: #5a6618;
+}
+
+a[aria-current="page"] {
+    background-color: #f0af30;
+    color: black;
+}
+
+
+/*Ändringar för störra skärmar, typ dator*/
+@media (min-width: 768px) {
+
+    main{
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+    
+    h1 {
+        padding-top: 1.1rem;
+        padding-left: 1rem;
+        font-size: 3rem;
+        text-align: left;
+    }
+
+    nav {
+        margin-left: 5rem;
+        margin-right: 5rem;
+        padding: 1rem;
+        margin-bottom: 0;
+    }
+
+    /*Gör nav till flex för at kunna lägga länkarna på rad*/
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2.5rem;
+        list-style-type: none;
+    }
+    /*Ändrar font size för att passa en större skärm*/
+    a {
+        font-size: 1.5rem;
+    }
+
+    /*Gör min section till en grid och anpassar bredden med margin. Gör 3 kolumner som alla tar upp 1 fraction och som blir minst
+    200px för att förhindra att squish och att element hamnar utanför sina container, gjorde gap i % även för att hjälpa förhindra detta
+    */
+    section {
+       
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        column-gap: 3%;
+        row-gap: 2rem;
+        padding: 2rem;
+    }
+
+    /*Ändrar lite font size och använder margin för at placera titeln rätt på sidan*/
+    h2{
+        font-size: 2.5rem;
+        text-align: left;
+        margin-left: 2.3rem;
+        padding-top: 2rem;
+        padding-bottom: 0;
+    }
+
+    /*Behöver inte ha kvar 1rem margin från mobilversionen*/
+    article {
+        margin: 0;
+    }
+
+    /*Sätter en maxheight så att svampkorten inte blir allt för avlånga, */
+    img {
+        max-height: 15rem;
+    }
+
+    /*Sedan ändrar jag bara på lite margins för att fixa placeringen och mellanrummen mellan olika element*/
+    p {
+        margin: 0 1.5rem;
+    }
+
+    article p:first-of-type {
+        margin-top: 1rem;
+    }
+
+    article p:last-of-type {
+        margin-bottom: 1rem;
+    }
+
+    /*Ser till att knappen är längst ner*/
+    button{
+        margin-top: auto;
+    }
+
+    /*Ändrar färg på bakgrund på länkar och button med :hover och gör en mjukare transition med ease*/
+    a, button{
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a:hover, button:hover {
+        background-color: #f0af30;
+        color: black; 
+    }
+
+    /*Fixar placeringen av mina badges*/
+    .deadly,
+    .poisonous,
+    .edible {
+        font-size: larger;
+        margin: 1.5rem 1.5rem 0 1.5rem;
+    }
+}

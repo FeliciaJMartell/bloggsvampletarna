@@ -1,0 +1,294 @@
+/* --- Globala inställningar & Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Döljer rubriken visuellt men behåller den för skärmläsare (semantik & tillgänglighet) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =========================================
+   1. CSS-VARIABLER (Vår färgpalett)
+   ========================================= */
+:root {
+    --bg-salvia: #E8EDE1;
+    --text-brun: #33301A;
+    --card-beige: #DCD3BA;
+    --accent-gron: #5A6A18;
+    --focus-orange: #F0AE32;
+    --border-khaki: #807A5E;
+}
+
+body {
+    background-color: #d9d2b8;
+    color: var(--text-brun);
+    font-family: serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Typografi & Rubriker --- */
+
+h2,
+h3 {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    color: #5a6618;
+    text-shadow: 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+h2 {
+    padding: 0.5rem;
+}
+
+/* --- Navigering --- */
+
+nav ul {
+    list-style-type: none;
+}
+
+a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0.4rem;
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+    color: #d9d2b8;
+    background-color: #5a6618;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover,
+a:active {
+    background-color: #f0af30;
+    color: black;
+}
+
+/* --- Huvudinnehåll --- */
+main {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+main header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+article {
+    border: 1px solid black;
+    width: 100%;
+    text-align: center;
+    min-width: 0;
+}
+
+#clear-button {
+    background-color: var(--accent-gron);
+    color: var(--bg-salvia);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#clear-button:hover {
+    background-color: #4a5736;
+}
+
+#clear-button:focus-visible {
+    outline: 3px solid var(--focus-orange);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   5. DET TOMMA LÄGET (Empty State)
+   ========================================= */
+#empty-state {
+    background-color: var(--card-beige);
+    border: 2px solid var(--border-khaki);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#empty-state h2 {
+    margin-bottom: 1.5rem;
+}
+
+#empty-state a {
+    background-color: var(--accent-gron);
+    color: var(--bg-salvia);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+#empty-state a:hover {
+    background-color: #4a5736;
+}
+
+#empty-state a:focus-visible {
+    outline: 3px solid var(--focus-orange);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   6. SVAMPRUTNÄTET (CSS Grid)
+   ========================================= */
+#card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* =========================================
+   7. SVAMPKORTEN (Utseende)
+   ========================================= */
+#card-container article {
+    background-color: rgb(187, 197, 132);
+    border: 1px solid var(--border-khaki);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#card-container article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-khaki);
+}
+
+#card-container h2,
+#card-container h3 {
+    padding: 0.1rem 1rem 0rem 1rem;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+#card-container p {
+    padding: 0 1rem 1rem 1rem;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   8. ETIKETTER (Badges för ätlighet)
+   ========================================= */
+.badge {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0.5rem 1rem 1rem 1rem;
+    margin-top: auto;
+}
+
+.badge-atlig {
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+    background-color: transparent;
+}
+
+.badge-giftig {
+    color: #d32f2f;
+    border: 1px solid #d32f2f;
+    background-color: transparent;
+}
+
+.badge-dodlig {
+    color: #ffffff;
+    background-color: #d32f2f;
+    border: 1px solid #d32f2f;
+}
+
+.badge-blandad {
+    color: #e65100;
+    border: 1px solid #e65100;
+    background-color: transparent;
+}
+
+/* --- Sidfot --- */
+footer {
+    text-align: center;
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    color: #5a6618;
+    border-top: 1px solid black;
+    margin-top: 1rem;
+}
+
+a[aria-current="page"] {
+    background-color: #f0af30;
+    color: black;
+}
+
+/* --- Media Queries (För skärmar större än 768px) --- */
+@media (min-width: 768px) {
+
+    main{
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        text-align: left;
+        padding-left: 1rem;
+    }
+
+    nav{
+        /*padding: 1rem;*/
+        margin-left: 0.3rem;
+        margin-top: 0.3rem;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+    }
+
+    a {
+        padding: 0.2rem 1.2rem;
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,68 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+body > header nav {
+    padding-top: 1rem;
+    margin: 0 0 1rem 0;
+}
+
+body > header {
+    line-height: normal;
+}
+
+body > header h1 {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    color: #5a6618;
+    text-align: center;
+    text-shadow: 1px 1px 0 #000;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 0.4rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border: 1px solid black;
+    background-color: #5a6618;
+    color: #d9d2b8;
+    border-radius: 8px;
+}
+
+nav a[aria-current="page"] {
+    background-color: #f0af30;
+    color: black;
+}
+
+@media (min-width: 768px) {
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+    }
+
+    nav a {
+        transition: background-color 0.3s, color 0.3s;
+        font-size: 1.5rem;
+    }
+
+    nav a:hover {
+        background-color: #f0af30;
+        color: black;
+    }
+
+    body > header h1 {
+        padding-top: 1.1rem;
+        font-size: 3rem;
+        text-align: left;
+        padding-left: 1rem;
+    }
+}
