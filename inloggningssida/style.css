@@ -5,20 +5,22 @@
 }
 
 body {
-    background: rgb(240, 206, 163);
-    font-family: 'Times New Roman', Times, serif;
+    background-color: #d9d2b8;
 }
 
 h1 {
-    font-style: italic;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    color: #5a6618;
     text-align: center;
-    color: black;
+    text-shadow: 1px 1px 0 #000;
 }
 
 h2 {
     font-style: italic;
     text-align: center;
-    color: black;
+    color: #5a6618;
+    font-size: 2rem;
 }
 
 /* här kommer min css selektor vy container som gäller för både startsida och inloggad vy. Jag använder flexbox column så att det ligger staplat på varandra, 
@@ -71,7 +73,7 @@ width och height så att jag senare snyggt ska kunna göra den rund och fyller s
     object-fit: cover;
     width: 150px;
     height: 150px;
-    border: 4px solid black;
+    border: 4px solid #5a6618;
 }
 
 /* gör att textrutorna som man ska skriva fyller hela skärmen på mobil så det blir enklare att klicka på dom med fingrarna. 
