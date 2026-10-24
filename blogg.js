@@ -27,8 +27,8 @@ class BlogPost extends BlogEntry {
 const postForm = document.getElementById("postForm");
 const postTitle = document.getElementById("postTitle");
 const postText = document.getElementById("postText");
+const postsContainer = document.getElementById("posts");
 const logoutKnapp = document.getElementById("logoutKnapp");
-
 function getPosts() {
     const saved = localStorage.getItem("blogPosts");
     if (saved) {
@@ -52,9 +52,10 @@ postForm.addEventListener("submit", (event) => {
     savePosts(posts);
     postForm.reset();
 });
+function renderPosts() {
+    postsContainer.textContent = "";
+}
 logoutKnapp.addEventListener("click", () => {
     localStorage.removeItem("inloggadAnvandare");
     window.location.href = "index.html";
 });
-
-
