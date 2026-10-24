@@ -1,3 +1,5 @@
+/*Min sida har ingen scroller och Zouhirs kan ha det ibland. Så la till denna så att mina sida & Zouhirs sida räknar
+med att en skroller finns hela tiden */
 html {
     scrollbar-gutter: stable;
 }
@@ -18,7 +20,7 @@ body {
 main {
     flex: 1;
 }
-
+/*Zouhir hade två header i sin html fil (body & main), så pekar på den ensamma headern i bodyn, alltså då inte den som ligger i main. */
 body > header nav {
     padding-top: 1rem;
     margin: 0 0 1rem 0;

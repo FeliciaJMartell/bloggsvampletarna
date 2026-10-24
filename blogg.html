@@ -24,26 +24,40 @@
     </header>
     <main>
         <h2>Svampbloggen</h2>
-        <article id="posts">
-            <h3>Titel</h3>
-            <p>Författare <time datetime="2026-10-21">21 oktober 2026</time></p>
-            <p>Blogginlägg</p>
-            <section class="comments">
-                <h4>Kommentarer</h4>
-                <article>
-                    <p>Författare <time datetime="2026-10-21">21 oktober 2026</time></p>
-                    <p>Kommentar</p>
-                </article>
-            </section>
-        </article>
+        <section>
+            <h3>Skriv ett inlägg</h3>
+            <form id="postForm">
+                <label for="postTitle">Titel</label>
+                <input type="text" id="postTitle" required>
 
-        <div>
-            <button type="button" id="logoutKnapp">Logga ut</button>
+                <label for="postText">Inlägg</label>
+                <textarea id="postText" required></textarea>
+
+                <button type="submit">Publicera</button>
+            </form>
+        </section>
+
+        <div id="posts">
+            <article>
+                <h3>Titel</h3>
+                <p>Författare <time datetime="2026-10-21">21 oktober 2026</time></p>
+                <p>Blogginlägg</p>
+                <section class="comments">
+                    <h4>Kommentarer</h4>
+                    <article>
+                        <p>Författare <time datetime="2026-10-21">21 oktober 2026</time></p>
+                        <p>Kommentar</p>
+                    </article>
+                </section>
+            </article>
         </div>
+
+        <button type="button" id="logoutKnapp">Logga ut</button>
+
 
     </main>
     <footer>
-        <p>Grupp 4 WU26 - Linn, Felicia, Zouhir</p>
+        <p>Klass WU26 - Felicia Johansson Martell</p>
     </footer>
 </body>
 
