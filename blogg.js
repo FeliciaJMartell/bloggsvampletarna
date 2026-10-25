@@ -60,6 +60,7 @@ function renderPosts() {
         const title = document.createElement("h3");
         title.textContent = post.title;
         const info = document.createElement("p");
+        info.classList.add("post-info");
         info.textContent = post.author + ", ";
         info.appendChild(createTime(post.date));
         const text = document.createElement("p");
@@ -77,9 +78,9 @@ function renderPosts() {
         });
         if (loggedInUser) {
             const commentForm = document.createElement("form");
-            const commentInput = document.createElement("input");
-            commentInput.type = "text";
+            const commentInput = document.createElement("textarea");
             commentInput.required = true;
+            commentInput.rows = 3;
             commentInput.setAttribute("aria-label", "Skriv en kommentar");
             const commentButton = document.createElement("button");
             commentButton.type = "submit";
