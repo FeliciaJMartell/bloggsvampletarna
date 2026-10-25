@@ -26,6 +26,9 @@
         <h2>Svampbloggen</h2>
         <section>
             <h3>Skriv ett inlägg</h3>
+            <p id="loginMessage" hidden>
+                Du måste <a href="inloggningssida/inloggning.html">logga in</a> för att kunna skriva inlägg eller kommentera.
+            </p>
             <form id="postForm">
                 <label for="postTitle">Titel</label>
                 <input type="text" id="postTitle" required>
@@ -38,21 +41,9 @@
         </section>
 
         <div id="posts">
-            <article>
-                <h3>Titel</h3>
-                <p>Författare <time datetime="2026-10-21">21 oktober 2026</time></p>
-                <p>Blogginlägg</p>
-                <section class="comments">
-                    <h4>Kommentarer</h4>
-                    <article>
-                        <p>Författare <time datetime="2026-10-21">21 oktober 2026</time></p>
-                        <p>Kommentar</p>
-                    </article>
-                </section>
-            </article>
         </div>
 
-        <button type="button" id="logoutKnapp">Logga ut</button>
+        <button type="button" id="logoutButton">Logga ut</button>
 
 
     </main>
