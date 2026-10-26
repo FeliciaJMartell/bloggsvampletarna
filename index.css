@@ -3,7 +3,6 @@ section {
     border-radius: 10px;
     padding: 1rem;
     max-width: 60rem;
-    margin: 0 auto;
 }
 
 section p {
@@ -11,22 +10,8 @@ section p {
     font-size: 1.2rem;
 }
 
-h2 {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    color: #5a6618;
-    text-shadow: 1px 1px 0 #000;
-    font-size: 2rem;
-    margin: 0 auto;
-    max-width: 60rem;
-}
 
 @media (min-width: 768px) {
 
-    /*Säger att main ska ta 100% av utrymmet, allt ska ligga i mitten, men max är 1200px. Tyckte det blev konstigt på min stora skärm kontra min lilla. */
-    main {
-        width: 100%;
-        margin: 0 auto;
-        max-width: 1200px;
-    }
+
 }

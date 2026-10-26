@@ -9,27 +9,15 @@ button {
     font-family: inherit;
 }
 
-main {
-    flex: 1;
-}
-
-h2,
 h3 {
     padding-top: 0.5rem;
     padding-bottom: 1rem;
     color: #5a6618;
     text-align: center;
-}
-
-/*La en liten skugga vid rubrikerna.*/
-h2 {
-    text-shadow: 1px 1px 0 #000;
-}
-
-h3 {
     font-size: 1rem;
     color: #332e18;
 }
+
 
 /* Ville att texten och knapparna skulle ligga fint, tyckte inte det såg bra ut med center, så valde baseline så att den går efter undersidan av texten.
 Ville att mina knappar skulle hamna över artiklarna på mobilen och kör då order -1. */
@@ -85,16 +73,6 @@ button:disabled {
 
 
 @media (min-width: 768px) {
-
-    h2 {
-        text-align: left;
-        padding-left: 1rem;
-    }
-
-    h2 {
-        font-size: 2.5rem;
-    }
-
     h3 {
         font-size: 1.5rem;
     }
@@ -138,12 +116,5 @@ button:disabled {
     /*sätter tillbaka så att knapparna hamnar under korten istället för över */
     .page-nav {
         order: 0;
-    }
-
-    /*Säger att main ska ta 100% av utrymmet, allt ska ligga i mitten, men max är 1200px. Tyckte det blev konstigt på min stora skärm kontra min lilla. */
-    main {
-        width: 100%;
-        margin: 0 auto;
-        max-width: 1200px;
     }
 }
