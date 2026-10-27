@@ -119,13 +119,16 @@ function renderPosts() {
             commentText.append(createTime(comment.date), ": " + comment.text);
             commentSection.appendChild(commentText);
         });
-        /* Gör en if sats som säger "om man är inloggad" så ska detta synas.
+        /* Gör en if sats som säger "om man är inloggad" så ska detta synas. Skapar upp allt i TS och inte i HTML, därför döljer
+        jag det inte på samma vis som formuläret med blogginlägg.
+        Så här skapar jag upp möjligheten till att kommentera, skapar upp element, säger att man måste skriva något för att kunna
+        publicera, annars får man felmeddelande.
         */
         if (loggedInUser) {
             const commentForm = document.createElement("form");
             const commentInput = document.createElement("textarea");
             commentInput.required = true;
-            commentInput.rows = 3;
+            commentInput.rows = 1;
             commentInput.setAttribute("aria-label", "Skriv en kommentar");
             const commentButton = document.createElement("button");
             commentButton.type = "submit";
