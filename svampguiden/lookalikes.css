@@ -18,6 +18,14 @@ h3 {
     color: #332e18;
 }
 
+/* Säger till main att ta allt utrymme som blir över & trycker då ner footern längst ner. Gör display flex här så att mains barn blir flex-element.
+Eftersom jag använder order: - 1 på ett av mains barn. 
+Använder flex-direction även här eftersom flex i sig lägger på rad som standard. */
+main {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* Ville att texten och knapparna skulle ligga fint, tyckte inte det såg bra ut med center, så valde baseline så att den går efter undersidan av texten.
 Ville att mina knappar skulle hamna över artiklarna på mobilen och kör då order -1. */
@@ -103,7 +111,7 @@ button:disabled {
     /*Sätter flex-direction row eftersom mobil har flex-direction column, behöver inte använda display: flex här eftersom den redan finns på mobil. 
     Sätter även min-height så att alla korten blir lika höga på alla sidor. */
     .cards {
-        min-height: 23.5rem;
+        min-height: 24.5rem;
         gap: 2.5rem;
         flex-direction: row;
     }
