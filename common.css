@@ -30,7 +30,7 @@ main {
     flex: 1;
 }
 
-main > h2 {
+main>h2 {
     padding: 0.5rem 0 1rem 0;
     color: #5a6618;
     text-shadow: 1px 1px 0 #000;
@@ -39,17 +39,17 @@ main > h2 {
 }
 
 /*Zouhir hade en annan line-height i sin fil, så behövde jämna ut den till det normala */
-body > header {
+body>header {
     line-height: normal;
 }
 
 /*Zouhir hade två header i sin html fil (body & main), så pekar på den ensamma headern i bodyn, alltså då inte den som ligger i main. */
-body > header nav {
+body>header nav {
     padding-top: 1rem;
     margin: 0 0 1rem 0;
 }
 
-body > header h1 {
+body>header h1 {
     padding-top: 0.5rem;
     padding-bottom: 1rem;
     color: #5a6618;
@@ -73,6 +73,12 @@ nav a {
     background-color: #5a6618;
     color: #ffffff;
     border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #f0af30;
+    color: black;
 }
 
 /*Använder aria-current för skärmläsaren, så den kan läsa upp aktuell sida. CSSen kan även använda attributet för att färga länken, 
@@ -92,6 +98,7 @@ footer {
 }
 
 @media (min-width: 768px) {
+    /*Länkarna läggs på rad vid större skärmar*/
     nav ul {
         display: flex;
         justify-content: center;
@@ -99,23 +106,17 @@ footer {
     }
 
     nav a {
-        transition: background-color 0.3s, color 0.3s;
         font-size: 1.5rem;
     }
 
-    nav a:hover {
-        background-color: #f0af30;
-        color: black;
-    }
-
-    body > header h1 {
+    body>header h1 {
         padding-top: 1.1rem;
         font-size: 3rem;
         text-align: left;
         padding-left: 1rem;
     }
 
-    main > h2 {
+    main>h2 {
         text-align: left;
         padding-left: 1rem;
         font-size: 2.5rem;

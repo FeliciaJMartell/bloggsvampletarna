@@ -18,7 +18,6 @@ h3 {
 
 #loginMessage {
     font-size: 1.2rem;
-    
 }
 
 
@@ -54,7 +53,7 @@ button {
     padding: 0.6rem;
     min-height: 2.75rem;
     border: 1px solid black;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 /*Använder resize så att man kan dra i textrutan, fast bara neråt*/
@@ -132,11 +131,13 @@ knappen. */
 }
 
 /*Lägger knappen längst till höger. Måste använda mig av display: block för att kunna använda margin-left: auto. Knappen behöver alltså
-en egen rad för att kunna tryckas längst till höger.*/
+en egen rad för att kunna tryckas längst till höger. Gav även knappen samma utseende som nav så det hänger ihop*/
 #logoutButton {
     display: block;
     margin-left: auto;
     margin-right: 1rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
 }
 
 @media (min-width: 768px) {
@@ -148,7 +149,7 @@ en egen rad för att kunna tryckas längst till höger.*/
 
     #logoutButton {
         padding: 0 2rem;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     /*Använder display flex så att allt i headern läggs på rad och använder flex-wrap så att det bryts om det inte får plats. */
