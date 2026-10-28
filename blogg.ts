@@ -1,4 +1,4 @@
-/*Gör 3 mallar för att skapa objekt. 
+/*Gör 3 klasser (mallar) för att skapa objekt. 
 Varje gång en användare skapar ett inlägg eller en kommentar så skapas ett nytt objekt med hjälp av new längre ner i koden.
 Valde att skapa en mall BlogEntry för att slippa skriva samma kod två gånger. Så jag gör extends i de andra två mallarna.
 Använder mig även av datum här, men eftersom det inte är något användaren ska skriva in, så behöver jag inte lägga
@@ -158,9 +158,9 @@ function renderPosts(): void {
             /*Skapar upp min eventlyssnare för knappen "kommentera":
              Börjar med att säga till att sidan inte ska laddas om eftersom detta är standard med formulär.
              Hämtar sedan alla inlägg ifall något nytt inlägg har sparats sedan sidan ritades. (vill inte att den nya kommentaren skriver över en annan)
-             commenValue = kommentaren som användaren skrivit in (utan mellanslag i början och slutet). 
+             commentValue = kommentaren som användaren skrivit in (utan mellanslag i början och slutet). 
              new BlogComment = skapar den nya kommentaren med den inloggade som författare, datumet sätts automatiskt i dess konstruktor.
-             allPosts [index] = sätter rätt kommentar på rätt inlägg, indexet kommer från ForEach loopen och eftersom den lyssnaren
+             allPosts[index] = sätter rätt kommentar på rätt inlägg, indexet kommer från forEach loopen och eftersom lyssnaren
              ligger i loopen så kommer den ihåg rätt index. 
              comments.push = lägger den nya kommentaren längst ner på inläggets kommentarslista.
              savePosts = sparar hela listan med den nya kommentaren och lägger in i localStorage som JSON. 
@@ -188,8 +188,8 @@ function renderPosts(): void {
         /*Lägger titel, användare, användarens text & kommentarsdelen i elementet article.*/
         article.append(title, info, text, commentSection);
 
-        /*Gör så att det nya inlägget läggs högst upp, använder prepend eftersom att index måste fortsätta stämma så att kommentarerna
-        vet vilket inlägg de hör till.*/
+        /*Gör så att det nya inlägget läggs högst upp, använder prepend eftersom index måste fortsätta stämma så att kommentarerna
+        vet vilket inlägg de hör till. Hade kunnat använda reverse, men då hade ordningen i listan vänts och index hade pekat på fel inlägg.*/
         postsContainer.prepend(article);
     });
 

@@ -4,8 +4,8 @@ så vinner den, därför behöver jag lägga en regel i min CSS. */
     display: none;
 }
 
-/*Samma sak här, fast eftersom id vinner över attributet [hidden] och jag har display: block på min logout Button, så behöver jag
-specificiera hidden */
+/*Samma sak här, fast eftersom id vinner över attributet [hidden] och jag har display: block på min logoutButton, så behöver jag
+specificera hidden */
 #logoutButton[hidden] {
     display: none;
 }
@@ -16,9 +16,13 @@ h3 {
     font-size: 1.5rem;
 }
 
+#loginMessage {
+    font-size: 1.2rem;
+    
+}
 
-/*Eftersom jag har flera h3 & ville ändra på strl på h3 vid "skriv ett inlägg" så var jag tvungen att peka på endast den */
 
+/*Eftersom jag har flera h3 & ville ändra på storlek på h3 vid "skriv ett inlägg" så var jag tvungen att peka på endast den */
 main>section>h3 {
     font-size: 2rem;
     margin-top: 2rem;
@@ -53,7 +57,7 @@ button {
     border-radius: 6px;
 }
 
-/*Använder resize så att man kan dra i texrutan, fast bara neråt*/
+/*Använder resize så att man kan dra i textrutan, fast bara neråt*/
 textarea {
     min-height: 5rem;
     resize: vertical;
@@ -70,10 +74,13 @@ button {
 
 button:hover {
     background-color: #f0af30;
+    color: black;
 }
 
+/*Det blir mer tydligt när man tabbar runt på sidan. Använder mig även outline-offset så att den svarta linjen hamnar lite utanför
+knappen. */
 :focus-visible {
-    outline: 3px solid #f0af30;
+    outline: 3px solid black;
     outline-offset: 2px;
 }
 
@@ -106,7 +113,6 @@ button:hover {
     font-style: italic;
 }
 
-
 .comments {
     border-top: 1px solid black;
     margin-top: 1rem;
@@ -133,17 +139,11 @@ en egen rad för att kunna tryckas längst till höger.*/
     margin-right: 1rem;
 }
 
-
 @media (min-width: 768px) {
 
 
     #posts article {
         padding: 1.5rem;
-    }
-
-    button:hover {
-        background-color: #f0af30;
-        color: black;
     }
 
     #logoutButton {
@@ -158,7 +158,7 @@ en egen rad för att kunna tryckas längst till höger.*/
         align-items: center;
     }
 
-    /*Använder flex-basis 100% så att naven i headern ska ta 100% av bredden vilket då betyder att den inte kan dela med någon annan.*/
+    /*Använder flex-basis 100% så att nav i headern ska ta 100% av bredden vilket då betyder att den inte kan dela rad med något annat.*/
     body>header nav {
         flex-basis: 100%;
     }

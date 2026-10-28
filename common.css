@@ -1,5 +1,5 @@
-/*Min sida har ingen scroller och Zouhirs kan ha det ibland. Så la till denna så att mina sida & Zouhirs sida räknar
-med att en skroller finns hela tiden */
+/*Min sida har ingen scrollbar och Zouhirs kan ha det ibland. Så la till denna så att min sida & Zouhirs sida räknar
+med att en scrollbar finns hela tiden */
 html {
     scrollbar-gutter: stable;
 }
@@ -10,6 +10,8 @@ html {
     padding: 0;
 }
 
+/*100dvh använde jag så bodyn blir minst lika hög som skärmen & dvh tar hänsyn till webbläsarens sökfält. Sedan använder jag flex
+så att main(flexbarnet) kan använda flex: 1. Men också så att allt staplas på varandra. */
 body {
     display: flex;
     flex-direction: column;
@@ -17,6 +19,9 @@ body {
     background-color: #d9d2b8;
 }
 
+/*Eftersom allt staplades på varandra så hamnade footern högt upp, använde då flex: 1 på main, så att den skulle ta allt utrymme som
+blev över och då trycka footern längst ner. Eftersom jag har flex på bodyn, så blev main bara lika bred som sitt innehåll, så fick
+då lägga till width: 100% så att main blev full bredd igen, men max 1200px. */
 main {
     width: 100%;
     max-width: 1200px;
@@ -33,14 +38,15 @@ main > h2 {
     text-align: center;
 }
 
+/*Zouhir hade en annan line-height i sin fil, så behövde jämna ut den till det normala */
+body > header {
+    line-height: normal;
+}
+
 /*Zouhir hade två header i sin html fil (body & main), så pekar på den ensamma headern i bodyn, alltså då inte den som ligger i main. */
 body > header nav {
     padding-top: 1rem;
     margin: 0 0 1rem 0;
-}
-
-body > header {
-    line-height: normal;
 }
 
 body > header h1 {
@@ -69,6 +75,8 @@ nav a {
     border-radius: 8px;
 }
 
+/*Använder aria-current för skärmläsaren, så den kan läsa upp aktuell sida. CSSen kan även använda attributet för att färga länken, 
+så jag slipper använda en klass/id.*/
 nav a[aria-current="page"] {
     background-color: #f0af30;
     color: black;
