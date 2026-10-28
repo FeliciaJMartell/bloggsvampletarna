@@ -1,31 +1,5 @@
-/* Använder box sizing högst upp i min css fil för att få bredden och höjden som jag faktiskt skriver. Utan detta så läggs tex padding på extra på det jag skriver. */
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #d9d2b8;
-}
-
-h1 {
-    padding-top: 0.5rem;
-    padding-bottom: 1rem;
-    color: #5a6618;
-    text-align: center;
-    text-shadow: 1px 1px 0 #000;
-}
-
-h2 {
-    font-style: italic;
-    text-align: center;
-    color: #5a6618;
-    font-size: 2rem;
-}
-
-/* här kommer min css selektor vy container som gäller för både startsida och inloggad vy. Jag använder flexbox column så att det ligger staplat på varandra, 
+/* här kommer min css selektor vy container som gäller för inloggningssidan. Jag använder flexbox column så att det ligger staplat på varandra, 
 då jag ville ha det så på både dator och större skärmar så behövde jag inte ändra något kring det i min media.*/
-
 .vy-container {
     display: flex;
     flex-direction: column;
@@ -35,7 +9,7 @@ då jag ville ha det så på både dator och större skärmar så behövde jag i
 }
 
 
-/*här kommer min css selektor för min placeholder, jag ville ju inte att namn och lösenord skulle stå ovanför, så då behövde jag gömma det. 
+/*Jag ville inte att namn och lösenord skulle stå ovanför, så då behövde jag gömma det. Men behöver ha kvar det i HTML för skärmläsaren.
 Jag använder absolute så att namn och lösenord inte knuffas med något annat, man kan säga att det läggs i luften. Det tas ut ur det normala dokumentflödet och ligger fritt. 
 Jag minskar min label (inte namn och lösenord) till en pixel, nu är det typ osynligt för ögat, men fortfarande där.
 Jag använder overflow för att klippa allt överflödigt, min låda är 1px, men namn och lösenord är större, så overflow klipper allting som hamnar utanför lådan. 
@@ -50,17 +24,20 @@ Clip klipper de sista bitarna från lådan, den klipper ner allt på 0.*/
     clip: rect(0, 0, 0, 0);
 }
 
-/*Jag ändrar cursor så att den blir en liten hand när man hovrar över knapparna, lägger även till textfärg eftersom jag märkte att texten blev väldigt ljus
-på min mobil då jag kör darkmode.*/
+/*Jag ändrar cursor så att den blir en liten hand när man hovrar över knapparna. Ändrar färger och utseende, lägger till transition
+så att färgerna övergår mjukt.*/
 
 button {
-    margin-top: 15px;
-    border: 2px solid black;
-    padding: 7px 20px;
-    background-color: whitesmoke;
+    font-weight: bold;
+    border: 1px solid black;
+    background-color: #5a6618;
+    color: #ffffff;
     border-radius: 8px;
+    padding: 0.5rem 0.7rem;
+    margin-top: 1rem;
+    font-family: inherit;
+    transition: background-color 0.3s, color 0.3s;
     cursor: pointer;
-    color: black; 
 }
 
 
@@ -76,7 +53,7 @@ width och height så att jag senare snyggt ska kunna göra den rund och fyller s
     border: 4px solid #5a6618;
 }
 
-/* gör att textrutorna som man ska skriva fyller hela skärmen på mobil så det blir enklare att klicka på dom med fingrarna. 
+/* gör att textrutorna som man ska skriva fyller hela bredden på mobil så det blir enklare att klicka på dom med fingrarna. 
 Det ändrar jag sedan i min media så att det inte tar upp hela rutan på en större skärm.*/
 
 input {
@@ -85,15 +62,6 @@ input {
     font-size: 16px;
     border: 1.5px solid black;
 }
-
-
-/* jag lägger till klassen hidden för att kunna gömma saker i mitt javascript sedan. */
-.hidden {
-    display: none;
-}
-
-
-/* större bild och rutorna får en fast bredd på bredare skärm.*/
 
 @media (min-width: 768px) {
     .svamp {
@@ -106,5 +74,13 @@ input {
         padding: 5px;
     }
 
+    button {
+        font-size: 1.2rem;
+        min-width: 6rem;
+    }
 
+    button:hover {
+        background-color: #f0af30;
+        color: black;
+    }
 }

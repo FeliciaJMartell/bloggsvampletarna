@@ -12,31 +12,29 @@
 
 <body>
     <header>
-        <header>
-            <h1>Svampletarna</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Startsida</a></li>
-                    <li><a href="../visa-svampar/visa-svampar.html">Alla Svampar</a></li>
-                    <li><a href="../mina-svampar/mina-svampar.html">Mina Svampar</a></li>
-                    <li><a href="../svampguiden/lookalikes.html">Svampguiden</a></li>
-                    <li><a href="../blogg.html">Svampbloggen</a></li>
-                </ul>
-            </nav>
-        </header>
+        <h1>Svampletarna</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Startsida</a></li>
+                <li><a href="../visa-svampar/visa-svampar.html">Alla Svampar</a></li>
+                <li><a href="../mina-svampar/mina-svampar.html">Mina Svampar</a></li>
+                <li><a href="../svampguiden/lookalikes.html">Svampguiden</a></li>
+                <li><a href="../blogg.html">Svampbloggen</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <h2 id="loginRubrik">Logga in här</h2>
+        <h2>Logga in här</h2>
 
         <form id="loginForm" class="vy-container">
 
             <label for="namn" class="visually-hidden">Namn</label>
-            <input type="text" id="namn" placeholder="Namn">
+            <input type="text" id="namn" placeholder="Namn" required>
 
             <label for="losenord" class="visually-hidden">Lösenord</label>
-            <input type="password" id="losenord" placeholder="Lösenord">
+            <input type="password" id="losenord" placeholder="Lösenord" required>
 
-            <button type="submit" id="loginKnapp">Logga in</button>
+            <button type="submit">Logga in</button>
             <p id="felMeddelande" aria-live="polite"></p>
         </form>
 
@@ -44,8 +42,8 @@
 
 
     </main>
-        <footer>
-        <p>Grupp 4 WU26 - Felicia</p>
+    <footer>
+        <p>Klass WU26 - Felicia Johansson Martell</p>
     </footer>
 </body>
 
